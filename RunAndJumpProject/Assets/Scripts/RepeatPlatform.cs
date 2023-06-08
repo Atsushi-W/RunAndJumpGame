@@ -4,30 +4,22 @@ using UnityEngine;
 
 public class RepeatPlatform : MonoBehaviour
 {
-    public GameObject start;
-    public GameObject end;
-    private Vector2 startPos;
-    private Vector2 endPos;
-    private float maxHeight = 0.7f;
-
+    public GameManager gameManager;
     public bool firstPlatform;
 
     void Start()
     {
-        startPos = start.transform.position;
-        endPos = end.transform.position;
-
         if (!firstPlatform)
         {
-            transform.position = new Vector2(transform.position.x, Random.Range(-maxHeight, maxHeight));
+            transform.position = gameManager.RandomTransormPosition();
         }
     }
 
     void Update()
     {
-        if(transform.position.x < endPos.x)
+        if(transform.position.x < gameManager.EndPosition().x)
         {
-            transform.position = new Vector2(startPos.x,Random.Range(-maxHeight, maxHeight));
+            transform.position = gameManager.RandomTransormPosition();
         }
     }
 }

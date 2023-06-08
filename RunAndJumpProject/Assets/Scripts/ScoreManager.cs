@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
     }
 
 
-    private void AddScore(int scorePoint)
+    public void AddScore(int scorePoint)
     {
         score += scorePoint;
         scoreText.text = "SCORE: " + score;
