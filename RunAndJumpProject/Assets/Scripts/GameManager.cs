@@ -1,24 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject start;
     public GameObject end;
+    public Text speedText;
+    public Text timeText;
+
     private Vector2 startPos;
     private Vector2 endPos;
     private float maxHeight = 0.7f;
+    private float speed;
+    private float span = 10.0f;
+    private int time;
 
     void Start()
     {
         startPos = start.transform.position;
         endPos = end.transform.position;
+        speed = 1;
+        speedText.text = "SPEED: " + speed;
+        time = 0;
+        timeText.text = "TIME: " + time;
+        StartCoroutine(AddMoveSpeed());
+        StartCoroutine(CountUp());
+
     }
 
     void Update()
     {
-        
+
     }
 
     public Vector2 StartPosition()
@@ -39,5 +53,30 @@ public class GameManager : MonoBehaviour
     public Vector2 RandomTransormPosition()
     {
         return new Vector2(startPos.x, Random.Range(-maxHeight, maxHeight) );
+    }
+
+    public float MoveSpeed()
+    {
+        return speed;
+    }
+
+    IEnumerator AddMoveSpeed()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(span);
+            speed += 0.5f;
+            speedText.text = "SPEED: " + speed;
+        }
+    }
+
+    IEnumerator CountUp()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            time++;
+            timeText.text = "TIME: " + time;
+        }
     }
 }

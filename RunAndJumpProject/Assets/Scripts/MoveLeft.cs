@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     public float speed;
+    public GameManager gameManager;
 
     void Start()
     {
@@ -13,6 +14,6 @@ public class MoveLeft : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        transform.Translate(Vector3.left * Time.deltaTime * speed * (gameManager.MoveSpeed()) );
     }
 }
