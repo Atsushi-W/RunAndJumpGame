@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class TimeController : MonoBehaviour
@@ -7,7 +9,7 @@ public class TimeController : MonoBehaviour
     [SceneName]
     public string nextLevel;
 
-    public GUIText timer;
+    public Text timer;
 
    
 
@@ -41,6 +43,6 @@ public class TimeController : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        Application.LoadLevel(nextLevel);
+        SceneManager.LoadScene(nextLevel);
     }
 }
