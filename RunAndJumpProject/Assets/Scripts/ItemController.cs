@@ -5,7 +5,6 @@ using UnityEngine;
 public class ItemController : MonoBehaviour
 {
     public GameManager gameManager;
-    public ScoreManager scoreManager;
     public int scorePoint = 100;
 
     void Start()
@@ -27,7 +26,7 @@ public class ItemController : MonoBehaviour
 
           if (name == "Player")
         {
-            scoreManager.AddScore(scorePoint);
+            gameManager.AddScore(scorePoint);
             transform.position = gameManager.RandomTransormPosition();
         }
     }

@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject end;
     public Text speedText;
     public Text timeText;
+    public Text scoreText;
+    public GameObject gameover;
+    public GameObject mainCamera;
 
     private Vector2 startPos;
     private Vector2 endPos;
@@ -16,6 +19,8 @@ public class GameManager : MonoBehaviour
     private float speed;
     private float span = 10.0f;
     private int time;
+    private int score;
+    private int TimeScore = 10;
 
     void Start()
     {
@@ -25,6 +30,8 @@ public class GameManager : MonoBehaviour
         speedText.text = "SPEED: " + speed;
         time = 0;
         timeText.text = "TIME: " + time;
+        score = 0;
+        scoreText.text = "SCORE: " + score;
         StartCoroutine(AddMoveSpeed());
         StartCoroutine(CountUp());
 
@@ -77,6 +84,50 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
             time++;
             timeText.text = "TIME: " + time;
+            AddScore(TimeScore);
         }
+    }
+    public void AddScore(int scorePoint)
+    {
+        score += scorePoint;
+        scoreText.text = "SCORE: " + score;
+    }
+
+    public void GameOver()
+    {
+        speed = 0;
+        StopAllCoroutines();
+        ShakeCamera();
+        gameover.SetActive(true);
+    }
+
+    private void ShakeCamera()
+    {
+        StartCoroutine(Shake());
+    }
+
+    IEnumerator Shake()
+    {
+        Vector3 mainCameraPos = mainCamera.transform.position;
+
+        float count = 0f;
+        float maxseconds = 0.5f;
+        float shakePower = 0.5f;
+        float maxShakeX = 0.25f;
+        float maxShakeY = 0.25f;
+
+        while (count < maxseconds)
+        {
+            float vx = mainCameraPos.x + Random.Range(-maxShakeX, maxShakeX) * shakePower;
+            float vy = mainCameraPos.y + Random.Range(-maxShakeY, maxShakeY) * shakePower;
+
+            mainCamera.transform.position = new Vector3(vx, vy, mainCameraPos.z);
+
+            count += Time.deltaTime;
+
+            yield return null;
+        }
+
+        mainCamera.transform.position = mainCameraPos;
     }
 }

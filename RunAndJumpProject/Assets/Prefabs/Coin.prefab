@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  scoreManager: {fileID: 0}
   scorePoint: 100
 --- !u!114 &1122885162
 MonoBehaviour:
@@ -149,3 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  gameManager: {fileID: 0}
