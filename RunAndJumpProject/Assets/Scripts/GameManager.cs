@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public GameObject gameover;
     public GameObject mainCamera;
+    public AudioSource gameoverVoice;
 
     private Vector2 startPos;
     private Vector2 endPos;
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        gameoverVoice.Play();
         speed = 0;
         StopAllCoroutines();
         ShakeCamera();

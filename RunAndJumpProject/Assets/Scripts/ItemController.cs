@@ -6,6 +6,7 @@ public class ItemController : MonoBehaviour
 {
     public GameManager gameManager;
     public int scorePoint = 100;
+    public AudioSource getSE; 
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class ItemController : MonoBehaviour
 
         if (name == "Player")
         {
+            getSE.Play();
             gameManager.AddScore(scorePoint);
             transform.position = gameManager.RandomTransormPosition();
         }
