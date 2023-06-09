@@ -314,6 +314,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1014098905}
+    - target: {fileID: 8373711108237698052, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee,
+        type: 3}
+      propertyPath: firstPlatform
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee, type: 3}
 --- !u!1 &502622933
@@ -585,6 +590,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1014098905}
+    - target: {fileID: 8373711108237698052, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee,
+        type: 3}
+      propertyPath: firstPlatform
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee, type: 3}
 --- !u!1 &690553027
@@ -2147,6 +2157,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1014098905}
+    - target: {fileID: 8373711108237698052, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee,
+        type: 3}
+      propertyPath: firstPlatform
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee, type: 3}
 --- !u!1 &2141237891
@@ -2320,6 +2335,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1014098905}
+    - target: {fileID: 8373711108237698052, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee,
+        type: 3}
+      propertyPath: firstPlatform
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5fb8ce5ca054a4baa0abc5ddc9b6ee, type: 3}
 --- !u!1001 &8453700495592077854
@@ -2341,6 +2361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 637448780175823920, guid: dd94ee8a445e77645a191c69919eefd5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7518461897812216467, guid: dd94ee8a445e77645a191c69919eefd5,
         type: 3}

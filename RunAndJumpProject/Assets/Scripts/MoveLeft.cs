@@ -9,11 +9,19 @@ public class MoveLeft : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed * (gameManager.MoveSpeed()) );
+        if(gameManager)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed * (gameManager.MoveSpeed()));
+        }
+        else
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed );
+        }
+
     }
 }
