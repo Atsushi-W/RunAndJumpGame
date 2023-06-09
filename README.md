@@ -1,9 +1,9 @@
 # UnityChan-RunAndJumpGame
-![ss](https://github.com/Atsushi-W/RunAndJumpGame/assets/135595685/5214c267-65b7-457b-a376-ddda2d2428d7)
+<img src="https://github.com/Atsushi-W/RunAndJumpGame/assets/135595685/5214c267-65b7-457b-a376-ddda2d2428d7" width="600">
 
 # はじめに
 ユニティちゃん2DデータのDemoをベースに作成した2D Run&Jumpゲームです。   
-スペースキーでジャンプし、足場に触れるまでは2回までジャンプが可能です。  
+スペースキーでジャンプし、足場に触れるまでは2回までジャンプができます。  
 ジャンプで足場に飛び移り、道中のUnityコインを取って高得点を狙おう！  
 
 # 操作説明
