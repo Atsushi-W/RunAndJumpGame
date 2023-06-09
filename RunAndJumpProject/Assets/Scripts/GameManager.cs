@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     private int time;
     private int score;
     private int TimeScore = 10;
+    private bool isGameOver;
 
     void Start()
     {
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        if (isGameOver && Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene("Main");
     }
 
     public Vector2 StartPosition()
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         ShakeCamera();
         gameover.SetActive(true);
+        isGameOver = true;
     }
 
     private void ShakeCamera()
