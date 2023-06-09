@@ -1,5 +1,5 @@
 # UnityChan-RunAndJumpGame
-<img src="https://github.com/Atsushi-W/RunAndJumpGame/assets/135595685/5214c267-65b7-457b-a376-ddda2d2428d7" width="600">
+<img src="./ss.png" width="600">
 
 # はじめに
 ユニティちゃん2DデータのDemoをベースに作成した2D Run&Jumpゲームです。   
