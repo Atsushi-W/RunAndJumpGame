@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  firstPlatform: 1
+  firstPlatform: 0
 --- !u!114 &7931125284469495905
 MonoBehaviour:
   m_ObjectHideFlags: 0

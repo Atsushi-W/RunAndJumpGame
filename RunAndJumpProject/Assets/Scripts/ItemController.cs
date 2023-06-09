@@ -7,6 +7,11 @@ public class ItemController : MonoBehaviour
     public GameManager gameManager;
     public int scorePoint = 100;
 
+    private void Awake()
+    {
+        transform.position = new Vector2(transform.position.x, Random.Range(-gameManager.MaxHeight(), gameManager.MaxHeight()));
+    }
+
     void Start()
     {
  
@@ -24,7 +29,7 @@ public class ItemController : MonoBehaviour
     {
         string name = collision.gameObject.tag;
 
-          if (name == "Player")
+        if (name == "Player")
         {
             gameManager.AddScore(scorePoint);
             transform.position = gameManager.RandomTransormPosition();
