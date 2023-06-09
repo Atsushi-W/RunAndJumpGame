@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PressStart : MonoBehaviour
 {
     public float speed;
+    public AudioSource startSE;
     private Text startText;
     private float time;
 
@@ -36,6 +37,14 @@ public class PressStart : MonoBehaviour
 
     private void OnPressSpace()
     {
+        StartCoroutine(PlayStartSE());
+    }
+
+    IEnumerator PlayStartSE()
+    {
+        startSE.Play();
+        // AudioSource.isPlayingを使った再生終了までの待機がうまくいかなかったため、WaitForSecondsで実装
+        yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene("Main");
     }
 }
