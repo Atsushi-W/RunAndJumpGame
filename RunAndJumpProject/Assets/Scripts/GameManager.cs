@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     private Vector2 endPos;
     private float maxHeight = 0.7f;
     private float speed;
+    private float addSpeed = 0.5f;
+    private float speedDisplay;
     private float span = 10.0f;
     private int time;
     private int score;
@@ -27,14 +29,14 @@ public class GameManager : MonoBehaviour
         startPos = start.transform.position;
         endPos = end.transform.position;
         speed = 1;
-        speedText.text = "SPEED: " + speed;
+        speedDisplay = 1;
+        speedText.text = "SPEED: " + speedDisplay;
         time = 0;
         timeText.text = "TIME: " + time;
         score = 0;
         scoreText.text = "SCORE: " + score;
         StartCoroutine(AddMoveSpeed());
         StartCoroutine(CountUp());
-
     }
 
     void Update()
@@ -72,8 +74,9 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(span);
-            speed += 0.5f;
-            speedText.text = "SPEED: " + speed;
+            speed += addSpeed;
+            speedDisplay++;
+            speedText.text = "SPEED: " + speedDisplay;
         }
     }
 
@@ -112,14 +115,13 @@ public class GameManager : MonoBehaviour
 
         float count = 0f;
         float maxseconds = 0.5f;
-        float shakePower = 0.5f;
-        float maxShakeX = 0.25f;
-        float maxShakeY = 0.25f;
+        float maxShakeX = 0.125f;
+        float maxShakeY = 0.125f;
 
         while (count < maxseconds)
         {
-            float vx = mainCameraPos.x + Random.Range(-maxShakeX, maxShakeX) * shakePower;
-            float vy = mainCameraPos.y + Random.Range(-maxShakeY, maxShakeY) * shakePower;
+            float vx = mainCameraPos.x + Random.Range(-maxShakeX, maxShakeX);
+            float vy = mainCameraPos.y + Random.Range(-maxShakeY, maxShakeY);
 
             mainCamera.transform.position = new Vector3(vx, vy, mainCameraPos.z);
 
